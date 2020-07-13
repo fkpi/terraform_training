@@ -20,4 +20,4 @@ phases:
 
   post_build:
     commands:
-      - terraform $TF_DESTROY
+      - terraform $TF_DESTROY -auto-approve
