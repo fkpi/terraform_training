@@ -11,13 +11,13 @@ phases:
   pre_build:
     commands:
       - terraform init
-      - terraform $TF_PLAN
+      - terraform plan
 
   build:
     commands:
-      - terraform $TF_APPLY -auto-approve
-      - echo terraform $TF_APPLY completed on `date`
+      - terraform apply -auto-approve
+      - echo terraform apply completed on `date`
 
   post_build:
     commands:
-      - terraform $TF_DESTROY -auto-approve
+      - terraform destroy -auto-approve
