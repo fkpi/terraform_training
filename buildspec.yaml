@@ -20,4 +20,5 @@ phases:
 
   post_build:
     commands:
+      - sleep 60
       - terraform destroy -auto-approve
