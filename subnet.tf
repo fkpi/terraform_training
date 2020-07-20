@@ -3,6 +3,6 @@ resource "aws_subnet" "subnet" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "fkpi_subnet"
+    Name = "fkpi_subnet_cb"
   }
 }
