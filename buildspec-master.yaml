@@ -11,7 +11,7 @@ phases:
       - "mv terraform /usr/local/bin/"
   pre_build:
     commands:
-      - echo Starting Build from master branch
+      - echo Starting Build from master branch, with webhook
       - terraform init
       - terraform plan
 
