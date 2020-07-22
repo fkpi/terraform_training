@@ -1,0 +1,26 @@
+
+version: 0.2
+
+phases:
+
+  install:
+    commands:
+      - "apt install unzip -y"
+      - "wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip"
+      - "unzip terraform_0.12.28_linux_amd64.zip"
+      - "mv terraform /usr/local/bin/"
+  pre_build:
+    commands:
+      - echo Starting Build from master branch
+      - terraform init
+      - terraform plan
+
+  build:
+    commands:
+      - terraform apply -auto-approve
+      - echo terraform apply completed on `date`
+
+  post_build:
+    commands:
+      - sleep 60
+      - terraform destroy -auto-approve
