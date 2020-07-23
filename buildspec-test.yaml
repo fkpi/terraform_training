@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - terraform init
+      - terraform workspace new test
       - terraform plan
 
   build:
@@ -22,3 +23,5 @@ phases:
     commands:
       - sleep 60
       - terraform destroy -auto-approve
+      - terraform workspace select default
+      - terraform workspace delete test
